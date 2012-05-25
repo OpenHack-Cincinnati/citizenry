@@ -100,7 +100,7 @@ class Authentication < ActiveRecord::Base
 
   def matching_person
     @matching_person ||= Person.where(:imported_from_provider => self.provider,
-                                      :imported_from_id => self.uid).first
+                                      :imported_from_id => self.uid.to_s).first
   end
 
   def attach_matching_person_to_user
