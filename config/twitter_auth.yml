@@ -1,7 +1,7 @@
 development:
   strategy: oauth
-  oauth_consumer_key: QanfwVWWT86uL1JoICBIA
-  oauth_consumer_secret: fXTwkCQL9fYqtA1kxUVsNxtKJcLhOen85uRt3q6so
+  oauth_consumer_key: ENV.fetch('TWITTER_KEY')
+  oauth_consumer_secret: ENV.fetch('TWITTER_SECRET')
   base_url: "https://twitter.com"
   authorize_path: "/oauth/authenticate"
   api_timeout: 10
