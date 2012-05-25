@@ -15,7 +15,7 @@ gem 'pg'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 
 
-gem 'hoptoad_notifier'
+gem 'airbrake'
 
 #--[ Utility ]------------------------------------------------------------------
 gem 'httparty', '~> 0.8.0'
