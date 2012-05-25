@@ -16,8 +16,8 @@ common:
     - foursquare
   auth_credentials:
     twitter:
-      key: skeletonkey
-      secret: seekrit!
+      key: ENV.fetch('TWITTER_KEY')
+      secret: ENV.fetch('TWITTER_SECRET')
     facebook:
       key: skeletonkey
       secret: seekrit!
