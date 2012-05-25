@@ -18,8 +18,8 @@ common:
       key: <%= ENV.fetch('FB_KEY') %>
       secret: <%= ENV.fetch('FB_SECRET') %>
     linked_in:
-      key:
-      secret: seekrit!
+      key: <%= ENV.fetch('LINKED_IN_KEY') %>
+      secret: <%= ENV.fetch('LINKED_IN_SECRET') %>
   # Sometimes, you'll need to specify the location of your CA certs. Try first without.
   # ssl_ca_path: "/etc/ssl/certs"
   google_analytics_id: <your id>
