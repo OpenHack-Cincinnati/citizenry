@@ -20,6 +20,9 @@ common:
     linked_in:
       key: <%= ENV.fetch('LINKED_IN_KEY') %>
       secret: <%= ENV.fetch('LINKED_IN_SECRET') %>
+    github:
+      key: <%= ENV.fetch('GITHUB_KEY') %>
+      secret: <%= ENV.fetch('GITHUB_SECRET') %>
   # Sometimes, you'll need to specify the location of your CA certs. Try first without.
   # ssl_ca_path: "/etc/ssl/certs"
   google_analytics_id: <your id>
