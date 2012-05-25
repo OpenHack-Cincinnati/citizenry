@@ -4,7 +4,15 @@ class Company < ActiveRecord::Base
   acts_as_taggable_on :tags, :technologies
   sortable :created_at, :desc
 
-  has_attached_file :logo, :styles => { :medium => '220x220', :thumb => '48x48' }, :url => "/system/:attachment/:id/:style/:safe_filename"
+  has_attached_file :logo, 
+    :storage => :s3,
+    :bucket => ENV.fetch('S3_BUCKET_NAME'),
+    :s3_credentials => {
+      :access_key_id => ENV.fetch('AWS_ACCESS_KEY_ID'),
+      :secret_access_key => ENV.fetch('AWS_SECRET_ACCESS_KEY')
+    },
+    :styles => { :medium => '220x220', :thumb => '48x48' }
+    #:url => "/system/:attachment/:id/:style/:safe_filename"
 
   default_serialization_options :include => { :projects => {:include => [:tags, :technologies]}, 
                                               :groups => {:include => [:tags, :technologies]},

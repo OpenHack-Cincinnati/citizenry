@@ -36,13 +36,20 @@ module ImportImageFromURL
         :thumbnail_styles => opts[:thumbnail_styles] || { :medium => '220x220#', :thumb => '48x48#' },
         :gravatar => opts[:gravatar].nil? ? false : opts[:gravatar],
         :gravatar_sizes => opts[:gravatar_sizes] || { :medium => 220, :thumb => 48 },
-        :url => opts[:url] || '/system/:attachment/:id/:style/:safe_filename',
+        #:url => opts[:url] || '/system/:attachment/:id/:style/:safe_filename',
         :maximum_size => opts[:maximum_size] || 1000.kilobytes,
         :timeout_seconds => opts[:timeout_seconds] || 10,
       }
 
       # Activate PaperClip attachment on field
-      self.has_attached_file(field, :styles => leaf[:thumbnail_styles])
+      self.has_attached_file field,
+        :storage => :s3,
+        :bucket => ENV.fetch('S3_BUCKET_NAME'),
+        :s3_credentials => {
+          :access_key_id => ENV.fetch('AWS_ACCESS_KEY_ID'),
+          :secret_access_key => ENV.fetch('AWS_SECRET_ACCESS_KEY')
+        },
+        :styles => leaf[:thumbnail_styles]
 
       # Validate size of attachment
       self.validates_attachment_size(field, :less_than => leaf[:maximum_size])

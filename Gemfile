@@ -43,7 +43,8 @@ gem 'foursquare2', '~>1.1.0'   # https://gist.github.com/419219 <- github oauth 
 # gem 'thinking-sphinx', '~> 2.0.1', :require => 'thinking_sphinx'
 
 #--[ Model ]--------------------------------------------------------------------
-gem "paperclip", "~> 2.3"
+gem "paperclip"
+gem "aws-sdk", '~> 1.3.4'
 gem "inherited_resources", "~> 1.3.0"
 gem "responders", "~> 0.6.2"
 
