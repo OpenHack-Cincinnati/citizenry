@@ -7,20 +7,16 @@ common:
   time_zone: 'Eastern Time (US & Canada)'
   providers:
     - twitter
-    - open_id
-    - google
-    - yahoo
     - facebook
     - linked_in
     - github
-    - foursquare
   auth_credentials:
     twitter:
       key: <%= ENV.fetch('TWITTER_KEY') %>
       secret: <%= ENV.fetch('TWITTER_SECRET') %>
     facebook:
-      key: skeletonkey
-      secret: seekrit!
+      key: <%= ENV.fetch('FB_KEY') %>
+      secret: <%= ENV.fetch('FB_SECRET') %>
     linked_in:
       key:
       secret: seekrit!
