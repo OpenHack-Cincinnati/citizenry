@@ -250,7 +250,7 @@ en:
       company: Company
       person: Person
       title: A community-edited guide to the <span class="awesome">awesome tech community</span> of %{organization}
-      on_calagator: " on Calagator"
+      on_calagator: " on Calendar"
       upcoming_event: Upcoming event
       resource: Resource
       home_to: Home to
