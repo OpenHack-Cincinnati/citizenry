@@ -3,6 +3,7 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '<%= SETTINGS["google_analytics_id"] %>']);
+  _gaq.push(['_setDomainName', '<%= SETTINGS["google_analytics_domain"] %>']);
   _gaq.push(['_trackPageview']);
 
   (function() {
