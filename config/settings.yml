@@ -42,7 +42,7 @@ common:
   mailer:
     # delivery specific settings should be set in environment configs below
     # (you don't want to send out real emails in tests, do you?)
-    default_from: contact@domain.localhost
+    default_from: contact@madeincincy.com
   search: sql
   mentoring: false # enables experimental mentor matching features
 
