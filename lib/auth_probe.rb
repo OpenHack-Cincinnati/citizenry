@@ -89,7 +89,7 @@ class AuthProbe
 
     module GitHub
       def self.discover(email)
-        HTTParty.get("http://github.com/api/v2/json/user/email/#{CGI::escape email}").parsed_response.has_key?("user") ? [:github, nil] : nil
+        HTTParty.get("https://github.com/api/v2/json/user/email/#{CGI::escape email}").parsed_response.has_key?("user") ? [:github, nil] : nil
       end
     end
   end
