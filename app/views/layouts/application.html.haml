@@ -82,9 +82,9 @@
 
     #footer
       #citizenry_credit
-        = t('layout.powered_by', :powered_by => link_to("Citizenry", "http://github.com/reidab/citizenry/")).html_safe
-      #hosting_credit
-        = t('layout.hosting_credit', :host => link_to("#{SETTINGS['organization']['host']}", "#{SETTINGS['organization']['host_url']}")).html_safe
+        = t('layout.powered_by', :powered_by => link_to("Citizenry", "https://github.com/OpenHack-Cincinnati/citizenry")).html_safe
+      #roadmap
+        = link_to 'Roadmap', 'https://trello.com/board/made-in-cincy/5154d89968f3759904000e7a'
       #contact_link
         = t('layout.contact_link', :email => mail_to("#{SETTINGS['organization']['email']}")).html_safe
       #twitter_link
